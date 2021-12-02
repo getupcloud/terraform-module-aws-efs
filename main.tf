@@ -60,5 +60,5 @@ module "irsa_efs" {
   role_name_prefix              = local.name_prefix
   provider_url                  = var.cluster_oidc_issuer_url
   role_policy_arns              = [aws_iam_policy.efs.arn]
-  oidc_fully_qualified_subjects = ["system:serviceaccount:${var.service_account_namespace}:${var.service_account_name}"]
+  oidc_subjects_with_wildcards  = ["system:serviceaccount:${var.service_account_namespace}:efs*"]
 }

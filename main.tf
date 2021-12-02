@@ -8,7 +8,8 @@ data "aws_iam_policy_document" "efs" {
 
     actions = [
       "elasticfilesystem:DescribeAccessPoints",
-      "elasticfilesystem:DescribeFileSystems"
+      "elasticfilesystem:DescribeFileSystems",
+      "elasticfilesystem:DescribeMountTargets"
     ]
 
     resources = ["*"]
